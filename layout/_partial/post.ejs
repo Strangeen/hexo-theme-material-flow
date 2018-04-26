@@ -10,6 +10,11 @@
     <time>
       <%= date(post.date, 'MMM D, YYYY') %>
     </time>
+		<% if(post.updated && date(post.updated, 'YYYYMMDD') > date(post.date, 'YYYYMMDD')){ %>
+		<time>
+			, updated on <%= date(post.updated, 'MMM D, YYYY') %>
+		</time>
+		<% } %>
 		<%- partial('categories',{post:post}) %>
   </section>
   <section class="article typo">

@@ -164,6 +164,7 @@
             }
         }
     }
+		/*貌似并没有起作用*/
     table:not('.highlight table') {
         width: 100%;
         td,
@@ -177,6 +178,33 @@
             border-bottom-width: 2px;
         }
     }
+		/* 重新定义表格样式 */
+		table {
+				padding: 0.5 * @gap 0;
+				width: 100%;
+				//border-left: 1px solid @material-light-green;
+				//border-top: 1px solid @material-light-green;
+				th, td {
+						text-align: center;
+						padding: 0.35 * @gap 0.7 * @gap;
+						border-right: 1px solid @material-more-light-green;
+						border-bottom: 1px solid @material-more-light-green;
+				}
+				th {
+						border-bottom: 2px solid @material-light-green;
+				}
+				th:last-child, td:last-child {
+					border-right: none;
+				}
+				tr:last-child td {
+					border-bottom: none;
+				}
+				img {
+						margin-left: 0;
+						margin-right: 0;
+						max-width: 100%;
+				}
+		}
     @media (max-width: @on-phone) {
         h1,
         h2,
@@ -248,6 +276,15 @@
 }
 
 .highlight {
+	/* 修正table */
+	table {
+		border: none;
+		width: initial;
+		th, td {
+			padding: 0;
+			border: none;
+		}
+	}
   width: 100%;
   margin: 20px 0px;
   overflow: auto;

@@ -1,0 +1,20 @@
+#page-booklist {
+	th:nth-child(3), th:nth-child(4),
+	td:nth-child(3), td:nth-child(4) {
+		@media (max-width: @on-phone) {
+				display: none;
+		}
+	}
+	td:nth-child(2) {
+		text-align: left;
+	}
+	td:last-child {
+		@media (max-width: @on-phone) {
+			padding-left: 0.25 * @gap;
+			padding-right: 0.25 * @gap;
+		}
+		img {
+			margin: 0 auto;
+		}
+	}
+}

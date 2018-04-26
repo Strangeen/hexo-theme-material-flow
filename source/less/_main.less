@@ -52,7 +52,13 @@
                 width:~"calc(100% + 2 * @{gap})";
                 max-width: none;
             }
-        }
+						table img {
+								margin-left: 0;
+                margin-right: 0;
+								width: initial;
+                max-width: 100%;
+						}
+				}
     }
     .post-wrapper {
         padding: @gap /2;
@@ -127,7 +133,7 @@
         img {
             max-width: 100%;
         }
-    }
+		}
     @media(max-width:@on-phone) {
         padding-right: 0;
         .mobile-post();
