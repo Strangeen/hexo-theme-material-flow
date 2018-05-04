@@ -14,7 +14,7 @@
 <section class="post-list">
 	<% page.posts.each(function(post){ %>
     <div class='post-wrapper'>
-      <%- partial('post', {post: post}) %>
+      <%- partial('post', {post: builder(post).invoke(process).invoke(seqno, post.seqno).build()}) %>
     </div>
   <% }) %>
 </section>
