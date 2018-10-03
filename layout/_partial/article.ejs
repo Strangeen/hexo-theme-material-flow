@@ -23,6 +23,20 @@
 	<section class="article typo">
   	<div class="article-entry" itemprop="articleBody">
     	<%- builder(post).invoke(process).invoke(seqno, post.seqno).build('content') %>
+			<% 
+			/* 
+				文章底部版权信息输出条件：
+				1. 设置"copyright:false"不输出
+				2. Page一般情况不输出
+				3. Page设置"pageCopyright:true"输出
+				4. "reason"用于设置版权前缀信息，默认为“PS：转载文本...”，如果设置"reason:REASON"，则会显示“PS：REASON，转载文本...”
+			*/
+			if(!(post.copyright == false || (type == "page" && post.pageCopyright != true))) { %>
+				<p class="article-copyright"><b>PS：
+				<%- post.copyrightPrefix != null && post.copyrightPrefix != '' ? post.copyrightPrefix + '，' : '' %>
+				转载本文的任何图文请注明出处：<a href="/article/<%- post.link %>.html"><%- post.title %> - 
+				<%- theme.url.replace('http://', '').replace('https://', '') %></a></b></p>
+			<% } %>
   	</div>
 	  <% if (post.tags && post.tags.length) { %>
 	  <div class="article-tags tags">

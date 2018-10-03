@@ -1,6 +1,38 @@
 # Ye Dinghui 修改
 
-## v1.2.0
+## v1.3
+
+1. 新增文章版权信息
+
+## 版权信息说明
+
+1. post类型页面文章底部默认添加文字：“PS： 转载本文的任何图文请注明出处：title - domain”，当“copyright”设置为false时不显示。
+
+2. page类型页面文章底部默认不显示版权信息，当“pageCopyright”设置为true是显示。
+
+3. 版权信息可以设置前缀，当“reason”设置后，如“REASON”，版权显示为“PS： REASON，title - domain”。
+
+其中，“title”是文章标题，“domain”是配置在`_config.yml`中的站点域名。
+
+其他配置用法，文章头部参数：
+
+- copyright:false
+
+表示不显示版权信息
+
+- pageCopyright:true
+
+表示page页面显示版权信息
+
+- reason:XXX
+
+版权信息前缀信息XXX
+
+
+
+---
+
+## v1.2
 
 1. 新增自增序号语句
 
@@ -45,7 +77,7 @@ seqno: ::seqno1(1,1)::seqno2(2,3)
 
 ---
 
-## v1.1.0
+## v1.1
 
 1. 新增表格样式
 2. 新增进度条语句，只兼容chrome和iphone的safari
