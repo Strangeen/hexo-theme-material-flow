@@ -15,10 +15,10 @@
 		this.post = post;
 		
 		// funName第一个参数是post，只能更改对象属性，不能更改引用
-		this.invoke = function(fun, ...theArgs) {
+		this.invoke = function(fun) {
 			if (typeof(fun) != 'function')
 				throw new Error(fun + '不是方法');
-			fun(post, theArgs);
+			fun(post, arguments);
 			return this;
 		}
 		

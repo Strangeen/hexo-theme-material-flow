@@ -5,7 +5,9 @@
 	// 2、调用序号 ::seqno1					将替换为自动序号
 	// 3、多组自动序号  ::seqno1(1,1)  ::seqno2(1,1)  ::seqno1  ::seqno2
 	// 返回传入类型
-	hexo.extend.helper.register('seqno', function(post, seqNos) {
+	// objs: [this_function, seqNos]
+	hexo.extend.helper.register('seqno', function(post, objs) {
+		seqNos = objs[1];
 		if (!post) return post;
 		if (typeof(post) == 'string') {
 			return convertTag(post, seqNos);

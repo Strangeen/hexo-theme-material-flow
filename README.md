@@ -1,20 +1,20 @@
 # Ye Dinghui 修改
 
-## v1.3
+## v1.3.1
 
 1. 新增文章版权信息
 
 ## 版权信息说明
 
-1. post类型页面文章底部默认添加文字：“PS： 转载本文的任何图文请注明出处：title - domain”，当“copyright”设置为false时不显示。
+1. `_config.yml`设置参数`copyright_statement`，值为版权信息模板。比如：“<b>${copyrightPrefix ，}转载本文的任何图文请注明出处：<a href="/article/${link}.html">${title} - dinghuiye.online</a></b>”。
 
-2. page类型页面文章底部默认不显示版权信息，当“pageCopyright”设置为true是显示。
+其中，`${}`为替换符，将被文章中同名参数值替换，如果没有找到同名参数将替换为空。`${}`格式内部为`${参数名 替换后的后缀}`（中间有空格分隔），比如：`${copyrightPrefix ，}`，如果文章中`copyrightPrefix`为`ABC`，最终将替换为`ABC，`。
 
-3. 版权信息可以设置前缀，当“reason”设置后，如“REASON”，版权显示为“PS： REASON，title - domain”。
+2. post类型页面文章底部默认添加文字，当“copyright”设置为false时不显示。
 
-其中，“title”是文章标题，“domain”是配置在`_config.yml`中的站点域名。
+2. page类型页面文章底部默认不显示版权信息，当“pageCopyright”设置为true时显示。
 
-其他配置用法，文章头部参数：
+文章头部参数：
 
 - copyright:false
 
@@ -23,10 +23,6 @@
 - pageCopyright:true
 
 表示page页面显示版权信息
-
-- reason:XXX
-
-版权信息前缀信息XXX
 
 
 
